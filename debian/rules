@@ -1,0 +1,24 @@
+#!/usr/bin/make -f
+
+# remember to change this upon soname bumps
+SO_VER = 0.6
+SO_LIB = libbearssl
+
+SO_NAME = $(SO_LIB).so.$(SO_VER)
+
+%:
+	dh $@ --parallel
+
+override_dh_auto_clean:
+	dh_auto_clean
+	rm -f build/$(SO_LIB).so*
+
+override_dh_auto_install:
+	@
+
+override_dh_auto_build:
+	make CC=gcc LD=gcc LDDLL=gcc \
+		LDDLLFLAGS="-shared -Wl,-soname,"$(SO_NAME) \
+		D=".so."$(SO_VER)
+	ln -sf $(SO_NAME) build/$(SO_LIB).so
+

@@ -1,0 +1,16 @@
+Description: Prefer linking brssl dynamically instead of statically.
+Author: multiplexd <multi@in-addr.xyz>
+
+--- bearssl-0.6.orig/mk/Rules.mk
++++ bearssl-0.6/mk/Rules.mk
+@@ -346,8 +346,8 @@ $(BEARSSLLIB): $(OBJDIR) $(OBJ)
+ $(BEARSSLDLL): $(OBJDIR) $(OBJ)
+ 	$(LDDLL) $(LDDLLFLAGS) $(LDDLLOUT)$(BEARSSLDLL) $(OBJ)
+ 
+-$(BRSSL): $(BEARSSLLIB) $(OBJBRSSL)
+-	$(LD) $(LDFLAGS) $(LDOUT)$(BRSSL) $(OBJBRSSL) $(BEARSSLLIB)
++$(BRSSL): $(BEARSSLDLL) $(OBJBRSSL)
++	$(LD) $(LDFLAGS) $(LDOUT)$(BRSSL) $(OBJBRSSL) $(BEARSSLDLL)
+ 
+ $(TESTCRYPTO): $(BEARSSLLIB) $(OBJTESTCRYPTO)
+ 	$(LD) $(LDFLAGS) $(LDOUT)$(TESTCRYPTO) $(OBJTESTCRYPTO) $(BEARSSLLIB)

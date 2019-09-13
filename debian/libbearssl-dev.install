@@ -1,0 +1,4 @@
+#!/usr/bin/dh-exec
+inc/* usr/include
+build/libbearssl.so  usr/lib/${DEB_HOST_MULTIARCH}
+build/libbearssl.a  usr/lib/${DEB_HOST_MULTIARCH}
