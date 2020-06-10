@@ -7,7 +7,7 @@ SO_LIB = libbearssl
 SO_NAME = $(SO_LIB).so.$(SO_VER)
 
 %:
-	dh $@ --parallel
+	dh $@
 
 override_dh_auto_clean:
 	dh_auto_clean

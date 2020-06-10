@@ -2,7 +2,6 @@ Source: bearssl
 Section: net
 Priority: optional
 Maintainer: multiplexd <multi@in-addr.xyz>
-Uploaders: multiplexd <multi@in-addr.xyz>
 Build-Depends: debhelper (>= 10), dh-exec (>= 0.23), quilt
 Standards-Version: 3.9.8
 Homepage: https://www.bearssl.org

@@ -1,3 +1,9 @@
+bearssl (0.6-2) stable; urgency=low
+
+  * Clean up source package and metadata
+
+ -- multiplexd <multi@in-addr.xyz>  Wed, 10 Jun 2020 21:00:14 +0100
+
 bearssl (0.6-1) stable; urgency=medium
 
   * Initial release.
